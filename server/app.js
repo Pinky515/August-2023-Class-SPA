@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 // npm install mongoose@6 - version 6 has less issues
 import mongoose from "mongoose";
+import pizzas from "./routers/pizzas.js";
 // Initialize the Express application
 const app = express();
 
@@ -100,6 +101,8 @@ app.get("/weather/:city", (request, response) => {
     })
   );
 });
+
+app.use("/pizzas", pizzas);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
